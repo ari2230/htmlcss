@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cheese Cat Walk</title>
+  <style>
+    body {
+      background: #fff8dc;
+      overflow: hidden;
+      margin: 0;
+      height: 100vh;
+    }
+
+    .cat {
+      position: absolute;
+      bottom: 30px;
+      left: -200px;
+      width: 120px;
+      height: 80px;
+      animation: walk 8s linear infinite;
+    }
+
+    .body {
+      position: absolute;
+      background: #ffd44d;
+      width: 100px;
+      height: 60px;
+      border-radius: 50% 50% 40% 40%;
+      top: 10px;
+      left: 10px;
+    }
+
+    .ear {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 15px solid #ffd44d;
+    }
+
+    .ear.left {
+      left: 25px;
+      top: -5px;
+    }
+
+    .ear.right {
+      left: 55px;
+      top: -5px;
+    }
+
+    .face {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: #ffd44d;
+      border-radius: 50%;
+      top: 5px;
+      left: 0px;
+    }
+
+    .eye {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: black;
+      border-radius: 50%;
+      top: 12px;
+    }
+
+    .eye.left { left: 10px; }
+    .eye.right { left: 25px; }
+
+    .tail {
+      position: absolute;
+      width: 40px;
+      height: 10px;
+      background: #ffd44d;
+      border-radius: 50%;
+      right: -30px;
+      top: 30px;
+      transform-origin: left center;
+      animation: tail-wag 0.6s ease-in-out infinite alternate;
+    }
+
+    .leg {
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background: #ffd44d;
+      border-radius: 5px;
+      bottom: 0;
+    }
+
+    .leg.front {
+      left: 30px;
+      animation: step 0.4s ease-in-out infinite alternate;
+    }
+
+    .leg.back {
+      left: 60px;
+      animation: step 0.4s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes tail-wag {
+      0% { transform: rotate(15deg); }
+      100% { transform: rotate(-15deg); }
+    }
+
+    @keyframes step {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(3px); }
+    }
+
+    @keyframes walk {
+      0% { left: -150px; }
+      100% { left: 110%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cat">
+    <div class="tail"></div>
+    <div class="body"></div>
+    <div class="face">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+    </div>
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+    <div class="leg front"></div>
+    <div class="leg back"></div>
+  </div>
+</body>
+</html>
